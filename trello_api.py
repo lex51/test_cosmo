@@ -21,5 +21,3 @@ def post_card_to_trello(proposals: list, chain_pref: str, chain_name: str):
         }
 
         requests.request("POST", url, headers=headers, params=query)
-
-
