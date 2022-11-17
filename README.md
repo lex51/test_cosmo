@@ -28,7 +28,9 @@ all done ))
 
 ## run 
 
+```bash
 python3 bot.py
+```
 
 ## usage
 
