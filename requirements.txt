@@ -1,0 +1,6 @@
+aiogram
+requests
+black
+tinydb
+loguru
+asyncio

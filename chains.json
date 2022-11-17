@@ -1,0 +1,551 @@
+[
+    {
+        "addr_prefix": "vdl",
+        "api": [
+            "https://mainnet-lcd.vidulum.app",
+            "https://api-vidulum-ia.cosmosia.notional.ventures",
+            "https://rest.rpc.erialos.me"
+        ],
+        "chain_name": "vidulum"
+    },
+    {
+        "addr_prefix": "agoric",
+        "api": [
+            "https://api.agoric.sgtstake.com",
+            "https://agoric-api.polkachu.com",
+            "https://api-agoric.nodes.guru",
+            "https://agoric.stakesystems.io",
+            "https://agoric-lcd.stakely.io",
+            "https://api.agoric.nodestake.top"
+        ],
+        "chain_name": "agoric"
+    },
+    {
+        "addr_prefix": "kujira",
+        "api": [
+            "https://lcd.kaiyo.kujira.setten.io",
+            "https://kujira-api.polkachu.com",
+            "https://api-kujira.nodeist.net"
+        ],
+        "chain_name": "kujira"
+    },
+    {
+        "addr_prefix": "bcna",
+        "api": [
+            "https://api-bitcanna-ia.cosmosia.notional.ventures",
+            "https://bitcanna-api.polkachu.com",
+            "https://lcd.bitcanna.io"
+        ],
+        "chain_name": "bitcanna"
+    },
+    {
+        "addr_prefix": "c4e",
+        "api": [
+            "https://lcd.c4e.io"
+        ],
+        "chain_name": "chain4energy"
+    },
+    {
+        "addr_prefix": "certik",
+        "api": [
+            "https://certik-api.polkachu.com",
+            "https://chainfull.noopsbycertik.com"
+        ],
+        "chain_name": "shentu"
+    },
+    {
+        "addr_prefix": "cro",
+        "api": [
+            "https://mainnet.crypto.org:1317"
+        ],
+        "chain_name": "crypto-com-chain"
+    },
+    {
+        "addr_prefix": "decentr",
+        "api": [
+            "https://rest.mainnet.decentr.xyz",
+            "https://api.decentr.nodestake.top"
+        ],
+        "chain_name": "decentr"
+    },
+    {
+        "addr_prefix": "like",
+        "api": [
+            "https://mainnet-node.like.co"
+        ],
+        "chain_name": "likecoin"
+    },
+    {
+        "addr_prefix": "swth",
+        "api": [
+            "https://api.carbon.network"
+        ],
+        "chain_name": "carbon"
+    },
+    {
+        "addr_prefix": "cheqd",
+        "api": [
+            "https://api.cheqd.net",
+            "https://api.cheqd.nodestake.top"
+        ],
+        "chain_name": "cheqd"
+    },
+    {
+        "addr_prefix": "axelar",
+        "api": [
+            "https://api-axelar-ia.cosmosia.notional.ventures",
+            "https://lcd-axelar.imperator.co",
+            "https://axelar-lcd.quickapi.com",
+            "https://axelar-api.polkachu.com",
+            "https://axelar-lcd.qubelabs.io",
+            "https://axelar-rest.chainode.tech",
+            "https://axelar-lcd.quantnode.tech",
+            "https://api-1.axelar.nodes.guru:443"
+        ],
+        "chain_name": "axelar"
+    },
+    {
+        "addr_prefix": "genesis",
+        "api": [
+            "https://api.genesisl1.org"
+        ],
+        "chain_name": "genesisL1"
+    },
+    {
+        "addr_prefix": "persistence",
+        "api": [
+            "https://rest.core.persistence.one"
+        ],
+        "chain_name": "persistence"
+    },
+    {
+        "addr_prefix": "kava",
+        "api": [
+            "https://api.data.kava.io"
+        ],
+        "chain_name": "kava"
+    },
+    {
+        "addr_prefix": "iaa",
+        "api": [
+            "https://iris.api.ping.pub"
+        ],
+        "chain_name": "iris"
+    },
+    {
+        "addr_prefix": "lumen",
+        "api": [
+            "https://api.helios-1.lumenex.io"
+        ],
+        "chain_name": "lumenx"
+    },
+    {
+        "addr_prefix": "omniflix",
+        "api": [
+            "https://api.omniflix.nodestake.top",
+            "https://omniflixhub-api.skynetvalidators.com"
+        ],
+        "chain_name": "omniflix"
+    },
+    {
+        "addr_prefix": "lum",
+        "api": [
+            "https://api-lum.degeno.de",
+            "https://node0.mainnet.lum.network/rest"
+        ],
+        "chain_name": "lum-network"
+    },
+    {
+        "addr_prefix": "band",
+        "api": [
+            "https://laozi1.bandchain.org/api"
+        ],
+        "chain_name": "band"
+    },
+    {
+        "addr_prefix": "bostrom",
+        "api": [
+            "https://lcd.bostrom.cybernode.ai"
+        ],
+        "chain_name": "bostrom"
+    },
+    {
+        "addr_prefix": "evmos",
+        "api": [
+            "https://evmos-api.polkachu.com",
+            "https://api-evmos-ia.cosmosia.notional.ventures",
+            "https://rest.bd.evmos.org:1317",
+            "https://evmos-api.skynetvalidators.com",
+            "https://api.evmos.nodestake.top"
+        ],
+        "chain_name": "evmos"
+    },
+    {
+        "addr_prefix": "rebus",
+        "api": [
+            "https://api.mainnet.rebus.money:1317",
+            "https://api.rebus.nodestake.top"
+        ],
+        "chain_name": "rebus"
+    },
+    {
+        "addr_prefix": "ki",
+        "api": [
+            "https://api-mainnet.blockchain.ki",
+            "https://ki.api.ping.pub",
+            "https://api.ki.nodestake.top"
+        ],
+        "chain_name": "kichain"
+    },
+    {
+        "addr_prefix": "bze",
+        "api": [
+            "https://rest.getbze.com"
+        ],
+        "chain_name": "beezee"
+    },
+    {
+        "addr_prefix": "jkl",
+        "api": [
+            "https://api.jackalprotocol.com",
+            "https://jackal-api.polkachu.com",
+            "https://api.jackal.nodestake.top"
+        ],
+        "chain_name": "jackal"
+    },
+    {
+        "addr_prefix": "pb",
+        "api": [
+            "https://api.provenance.io"
+        ],
+        "chain_name": "provenance"
+    },
+    {
+        "addr_prefix": "stride",
+        "api": [
+            "https://stride-api.polkachu.com",
+            "https://api.stride.nodestake.top",
+            "https://api-stride.nodeist.net"
+        ],
+        "chain_name": "stride"
+    },
+    {
+        "addr_prefix": "umee",
+        "api": [
+            "https://api.barnacle.mainnet.network.umee.cc:443"
+        ],
+        "chain_name": "umee"
+    },
+    {
+        "addr_prefix": "did:com:",
+        "api": [
+            "https://lcd-mainnet.commercio.network"
+        ],
+        "chain_name": "commercio.network"
+    },
+    {
+        "addr_prefix": "terra",
+        "api": [
+            "https://fcd.terra.dev"
+        ],
+        "chain_name": "terra-luna"
+    },
+    {
+        "addr_prefix": "odin",
+        "api": [
+            "https://node.odin-freya-website.odinprotocol.io/mainnet/a/api"
+        ],
+        "chain_name": "odin"
+    },
+    {
+        "addr_prefix": "stars",
+        "api": [
+            "https://stargaze-api.polkachu.com/",
+            "https://api-stargaze-ia.cosmosia.notional.ventures/",
+            "https://rest.stargaze-apis.com",
+            "https://rest.stargaze.publicawesome.dev"
+        ],
+        "chain_name": "stargaze"
+    },
+    {
+        "addr_prefix": "meme",
+        "api": [
+            "https://api-meme-1.meme.sx",
+            "https://meme-api.polkachu.com:443",
+            "https://api.meme.pupmos.network:443"
+        ],
+        "chain_name": "meme"
+    },
+    {
+        "addr_prefix": "und",
+        "api": [
+            "https://rest.unification.chainmasters.ninja",
+            "https://rest.unification.io"
+        ],
+        "chain_name": "Unification"
+    },
+    {
+        "addr_prefix": "inj",
+        "api": [
+            "https://lcd.injective.network"
+        ],
+        "chain_name": "injective"
+    },
+    {
+        "addr_prefix": "regen",
+        "api": [
+            "https://regen.api.ping.pub"
+        ],
+        "chain_name": "regen"
+    },
+    {
+        "addr_prefix": "fetch",
+        "api": [
+            "https://rest-fetchhub.fetch.ai"
+        ],
+        "chain_name": "fetchhub"
+    },
+    {
+        "addr_prefix": "cre",
+        "api": [
+            "https://crescent-api.polkachu.com",
+            "https://mainnet.crescent.network:1317",
+            "https://api.crescent.pupmos.network"
+        ],
+        "chain_name": "crescent"
+    },
+    {
+        "addr_prefix": "terra",
+        "api": [
+            "https://phoenix-lcd.terra.dev",
+            "https://terra-api.polkachu.com/"
+        ],
+        "chain_name": "terra2"
+    },
+    {
+        "addr_prefix": "osmo",
+        "api": [
+            "https://api-osmosis-ia.cosmosia.notional.ventures",
+            "https://osmosis-api.polkachu.com",
+            "https://osmo.api.ping.pub",
+            "https://lcd-osmosis.blockapsis.com"
+        ],
+        "chain_name": "osmosis"
+    },
+    {
+        "addr_prefix": "lamb",
+        "api": [
+            "https://rest.lambda.im",
+            "https://api.lambda.nodestake.top",
+            "https://lambda-api.jambulmerah.dev"
+        ],
+        "chain_name": "lambda"
+    },
+    {
+        "addr_prefix": "cerberus",
+        "api": [
+            "https://cerberus-api.polkachu.com",
+            "https://api-cerberus-ia.cosmosia.notional.ventures",
+            "https://api.cerberus.zone:1317"
+        ],
+        "chain_name": "cerberus"
+    },
+    {
+        "addr_prefix": "point",
+        "api": [
+            "https://rpc-mainnet-1.point.space:1317",
+            "https://api.point.nodestake.top"
+        ],
+        "chain_name": "Point"
+    },
+    {
+        "addr_prefix": "tori",
+        "api": [
+            "https://rest.mainnet.teritori.com",
+            "https://api.teritori.nodestake.top"
+        ],
+        "chain_name": "teritori"
+    },
+    {
+        "addr_prefix": "canto",
+        "api": [
+            "https://canto-api.polkachu.com",
+            "https://api.canto.nodestake.top"
+        ],
+        "chain_name": "canto"
+    },
+    {
+        "addr_prefix": "chihuahua",
+        "api": [
+            "https://chihuahua-api.polkachu.com",
+            "https://api.chihuahua.wtf",
+            "https://chihuahua-api.mercury-nodes.net"
+        ],
+        "chain_name": "chihuahua"
+    },
+    {
+        "addr_prefix": "gravity",
+        "api": [
+            "https://gravitychain.io:1317",
+            "https://api.gravity-bridge.nodestake.top"
+        ],
+        "chain_name": "gravity-bridge"
+    },
+    {
+        "addr_prefix": "bitsong",
+        "api": [
+            "https://api-bitsong-ia.cosmosia.notional.ventures",
+            "https://lcd.explorebitsong.com"
+        ],
+        "chain_name": "bitsong"
+    },
+    {
+        "addr_prefix": "dig",
+        "api": [
+            "https://api-1-dig.notional.ventures"
+        ],
+        "chain_name": "dig"
+    },
+    {
+        "addr_prefix": "micro",
+        "api": [
+            "https://lcd.microtick.zone"
+        ],
+        "chain_name": "microtick"
+    },
+    {
+        "addr_prefix": "emoney",
+        "api": [
+            "https://emoney.validator.network/api"
+        ],
+        "chain_name": "e-money"
+    },
+    {
+        "addr_prefix": "desmos",
+        "api": [
+            "https://api.mainnet.desmos.network"
+        ],
+        "chain_name": "desmos"
+    },
+    {
+        "addr_prefix": "sif",
+        "api": [
+            "https://api-sifchain-ia.cosmosia.notional.ventures",
+            "https://sifchain-api.polkachu.com",
+            "https://api.sifchain.finance"
+        ],
+        "chain_name": "sifchain"
+    },
+    {
+        "addr_prefix": "comdex",
+        "api": [
+            "https://api-comdex-ia.cosmosia.notional.ventures",
+            "https://comdex-api.polkachu.com",
+            "https://rest.comdex.one/"
+        ],
+        "chain_name": "comdex"
+    },
+    {
+        "addr_prefix": "n",
+        "api": [
+            "https://api.nyx.nodes.guru"
+        ],
+        "chain_name": "nyx"
+    },
+    {
+        "addr_prefix": "secret",
+        "api": [
+            "https://secretnetwork-lcd.stakely.io",
+            "https://secret.api.consensus.one",
+            "https://secret-4.api.trivium.network:1317"
+        ],
+        "chain_name": "secret"
+    },
+    {
+        "addr_prefix": "star",
+        "api": [
+            "https://api.iov-mainnet-ibc.iov.one"
+        ],
+        "chain_name": "starname"
+    },
+    {
+        "addr_prefix": "juno",
+        "api": [
+            "https://api-juno-ia.cosmosia.notional.ventures",
+            "https://juno-api.polkachu.com",
+            "https://lcd-juno.itastakers.com"
+        ],
+        "chain_name": "juno"
+    },
+    {
+        "addr_prefix": "echelon",
+        "api": [
+            "https://api.ech.network",
+            "https://lcd-echelon.whispernode.com",
+            "https://api.echelon.nodestake.top",
+            "https://echelon-api.polkachu.com",
+            "https://api.eu.ech.world",
+            "https://api.us.ech.world"
+        ],
+        "chain_name": "echelon"
+    },
+    {
+        "addr_prefix": "stafi",
+        "api": [
+            "https://public-rest-rpc1.stafihub.io",
+            "https://api.stafihub.nodestake.top"
+        ],
+        "chain_name": "stafihub"
+    },
+    {
+        "addr_prefix": "sent",
+        "api": [
+            "https://api-sentinel-ia.cosmosia.notional.ventures",
+            "https://lcd.sentinel.co"
+        ],
+        "chain_name": "sentinel"
+    },
+    {
+        "addr_prefix": "rizon",
+        "api": [
+            "https://api.rizon.chaintools.tech",
+            "https://restapi.rizon.world"
+        ],
+        "chain_name": "rizon"
+    },
+    {
+        "addr_prefix": "cosmos",
+        "api": [
+            "https://api-cosmoshub-ia.cosmosia.notional.ventures",
+            "https://lcd-cosmoshub.blockapsis.com:443",
+            "https://cosmos.api.ping.pub"
+        ],
+        "chain_name": "cosmos"
+    },
+    {
+        "addr_prefix": "ixo",
+        "api": [
+            "https://impacthub.ixo.world/rest",
+            "https://proxies.sifchain.finance/api/impacthub-3/rest"
+        ],
+        "chain_name": "ixo"
+    },
+    {
+        "addr_prefix": "akash",
+        "api": [
+            "https://api-akash-ia.cosmosia.notional.ventures/",
+            "https://akash-api.polkachu.com",
+            "https://akash.c29r3.xyz:443/api",
+            "https://akash.api.ping.pub"
+        ],
+        "chain_name": "akash"
+    },
+    {
+        "addr_prefix": "pasg",
+        "api": [
+            "https://passage-api.polkachu.com",
+            "https://api.passage.nodestake.top"
+        ],
+        "chain_name": "passage"
+    }
+]
