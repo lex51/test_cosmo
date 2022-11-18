@@ -59,46 +59,48 @@ async def monitoring_chains_for_users(period=Conf.monitoring_period):
         ]
 
         for chain in user_monitoring_list:
+            try:
+                prop, chain_name = get_props_chain(chain)
+                json_dump = json.dumps(prop)
+                md5_hash = hashlib.md5(json_dump.encode("utf-8")).hexdigest()
+                if (
+                    bool(chains_table.search(Query().chain == chain)) is False
+                    or chains_table.search(Query().chain == chain)[0].get("last_prop")
+                    is None
+                ) and (
+                    chains_table.search(Query().chain == chain)[0].get("hash") == md5_hash
+                    or chains_table.search(Query().chain == chain)[0].get("hash") is None
+                ):
+                    lg.info(f"no new records in chain monitoring list for {chain}")
+                    chains_table.update(
+                        {
+                            "chain": chain,
+                            "hash": md5_hash,
+                            "last_pror": get_last_proposals(prop)
+                            # "status" : "bad" if repr(js_decode_err) else "ok"
+                        },
+                        Query().chain == chain,
+                    )
+                if chains_table.search(Query().chain == chain)[0].get("hash") != md5_hash:
+                    prop_for_update = get_last_proposals_range(
+                        prop,
+                        chains_table.search(Query().chain == chain)[0].get("last_pror"),
+                    )
 
-            prop, chain_name = get_props_chain(chain)
-            json_dump = json.dumps(prop)
-            md5_hash = hashlib.md5(json_dump.encode("utf-8")).hexdigest()
-            if (
-                bool(chains_table.search(Query().chain == chain)) is False
-                or chains_table.search(Query().chain == chain)[0].get("last_prop")
-                is None
-            ) and (
-                chains_table.search(Query().chain == chain)[0].get("hash") == md5_hash
-                or chains_table.search(Query().chain == chain)[0].get("hash") is None
-            ):
-                lg.info(f"no new records in chain monitoring list for {chain}")
-                chains_table.update(
-                    {
-                        "chain": chain,
-                        "hash": md5_hash,
-                        "last_pror": get_last_proposals(prop)
-                        # "status" : "bad" if repr(js_decode_err) else "ok"
-                    },
-                    Query().chain == chain,
-                )
-            if chains_table.search(Query().chain == chain)[0].get("hash") != md5_hash:
-                prop_for_update = get_last_proposals_range(
-                    prop,
-                    chains_table.search(Query().chain == chain)[0].get("last_pror"),
-                )
+                    # INFO UPDATED
+                    lg.info(f"find {len(prop_for_update)} records for {chain_name}")
+                    post_card_to_trello(prop_for_update, chain, chain_name)
 
-                # INFO UPDATED
-                lg.info(f"find {len(prop_for_update)} records for {chain_name}")
-                post_card_to_trello(prop_for_update, chain, chain_name)
+                    chains_table.update(
+                        {
+                            "hash": md5_hash,
+                            # "last_pror": get_last_proposals(prop) #update only hash and on next iteration apdates last_prop
+                        },
+                        Query().chain == chain,
+                    )
+            except BaseException:
+                continue
 
-                chains_table.update(
-                    {
-                        "hash": md5_hash,
-                        # "last_pror": get_last_proposals(prop) #update only hash and on next iteration apdates last_prop
-                    },
-                    Query().chain == chain,
-                )
-
-        # asyncio.sleep(60)  # * period)
-        # time.sleep(60 * period)
+            # asyncio.sleep(60)  # * period)
+            # time.sleep(60 * period)
         await asyncio.sleep(60 * period)

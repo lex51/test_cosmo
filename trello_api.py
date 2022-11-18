@@ -17,7 +17,7 @@ def post_card_to_trello(proposals: list, chain_pref: str, chain_name: str):
             "token": Conf.trello_sec,
             "name": f"{chain_name} - {prop.get('proposal_id')}",
             "due": prop.get("voting_end_time"),
-            "urlSource": f"ping.pub/{chain_pref}/gov/{prop.get('proposal_id')}",
+            "urlSource": f"ping.pub/{chain_name}/gov/{prop.get('proposal_id')}",
         }
 
         requests.request("POST", url, headers=headers, params=query)
