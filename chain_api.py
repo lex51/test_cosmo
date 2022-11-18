@@ -68,8 +68,10 @@ async def monitoring_chains_for_users(period=Conf.monitoring_period):
                     or chains_table.search(Query().chain == chain)[0].get("last_prop")
                     is None
                 ) and (
-                    chains_table.search(Query().chain == chain)[0].get("hash") == md5_hash
-                    or chains_table.search(Query().chain == chain)[0].get("hash") is None
+                    chains_table.search(Query().chain == chain)[0].get("hash")
+                    == md5_hash
+                    or chains_table.search(Query().chain == chain)[0].get("hash")
+                    is None
                 ):
                     lg.info(f"no new records in chain monitoring list for {chain}")
                     chains_table.update(
@@ -81,7 +83,10 @@ async def monitoring_chains_for_users(period=Conf.monitoring_period):
                         },
                         Query().chain == chain,
                     )
-                if chains_table.search(Query().chain == chain)[0].get("hash") != md5_hash:
+                if (
+                    chains_table.search(Query().chain == chain)[0].get("hash")
+                    != md5_hash
+                ):
                     prop_for_update = get_last_proposals_range(
                         prop,
                         chains_table.search(Query().chain == chain)[0].get("last_pror"),
