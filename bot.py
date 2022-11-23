@@ -53,7 +53,7 @@ async def select_chain_monitoring(message: types.Message):
 
     await Form.chain.set()
     await message.reply(
-        "select interest chain and monitoring will start ))", reply_markup=kb
+        "select interest chain and monitoring will starts ))", reply_markup=kb
     )
     await Form.user_id.set(user=message.from_user.id)
     # await state.finish()

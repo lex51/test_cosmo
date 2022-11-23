@@ -15,7 +15,8 @@ create conf.py
 ```python
 class Conf:
 
-    monitoring_period = 1 # in mins
+    monitoring_period = 30 # in mins
+    start_date_monitoring = "2022-11-10" # YYYY-MM-DD
 
     tg_token = "..."
     

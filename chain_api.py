@@ -1,13 +1,12 @@
 import requests
 import json
-import hashlib
+# import hashlib
 
 from requests.exceptions import JSONDecodeError, ReadTimeout
 from tinydb import TinyDB, Query
 from db_crud import chain_monitoring_by_user
-from utils import get_last_proposals, get_last_proposals_range
-from trello_api import post_card_to_trello
-import time
+# from utils import get_last_proposals, get_last_proposals_range
+from trello_api import get_last_id_trello_by_chain, select_prop_for_publ_trello
 from conf import Conf
 
 import asyncio
@@ -46,63 +45,31 @@ def get_props_chain(chain):
 
 async def monitoring_chains_for_users(period=Conf.monitoring_period):
     """period in minutes"""
-
     while True:
 
         # TODO work with db take it to db_crud
         db = TinyDB("db.json")
         chains_table = db.table("chains")
-        user_monitoring_list = await chain_monitoring_by_user()
-        user_monitoring_list = [
-            chains_table.search(Query().name == i)[0].get("chain")
-            for i in user_monitoring_list
-        ]
 
-        for chain in user_monitoring_list:
+        try:
+            user_monitoring_list = await chain_monitoring_by_user()
+
+            user_monitoring_list = [
+                chains_table.search(Query().name == i)[0].get("chain")
+             for i in user_monitoring_list
+            ]
+        except IndexError:
+            lg.warning("problem with get index in chain_monitoring_list")
+            continue
+
+        for chain_pref in user_monitoring_list:
             try:
-                prop, chain_name = get_props_chain(chain)
-                json_dump = json.dumps(prop)
-                md5_hash = hashlib.md5(json_dump.encode("utf-8")).hexdigest()
-                if (
-                    bool(chains_table.search(Query().chain == chain)) is False
-                    or chains_table.search(Query().chain == chain)[0].get("last_prop")
-                    is None
-                ) and (
-                    chains_table.search(Query().chain == chain)[0].get("hash")
-                    == md5_hash
-                    or chains_table.search(Query().chain == chain)[0].get("hash")
-                    is None
-                ):
-                    lg.info(f"no new records in chain monitoring list for {chain}")
-                    chains_table.update(
-                        {
-                            "chain": chain,
-                            "hash": md5_hash,
-                            "last_pror": get_last_proposals(prop)
-                            # "status" : "bad" if repr(js_decode_err) else "ok"
-                        },
-                        Query().chain == chain,
-                    )
-                if (
-                    chains_table.search(Query().chain == chain)[0].get("hash")
-                    != md5_hash
-                ):
-                    prop_for_update = get_last_proposals_range(
-                        prop,
-                        chains_table.search(Query().chain == chain)[0].get("last_pror"),
-                    )
+                prop, chain_name = get_props_chain(chain_pref)
+                chain_prop_data = prop
+                # print(await get_last_id_trello_by_chain(chain_name))
+                await select_prop_for_publ_trello(prop['proposals'], chain_name, chain_pref)
 
-                    # INFO UPDATED
-                    lg.info(f"find {len(prop_for_update)} records for {chain_name}")
-                    post_card_to_trello(prop_for_update, chain, chain_name)
 
-                    chains_table.update(
-                        {
-                            "hash": md5_hash,
-                            # "last_pror": get_last_proposals(prop) #update only hash and on next iteration apdates last_prop
-                        },
-                        Query().chain == chain,
-                    )
             except BaseException:
                 continue
 
