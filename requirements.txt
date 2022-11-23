@@ -4,3 +4,5 @@ black
 tinydb
 loguru
 asyncio
+wheel
+python-dateutil
