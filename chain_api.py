@@ -1,10 +1,12 @@
 import requests
 import json
+
 # import hashlib
 
 from requests.exceptions import JSONDecodeError, ReadTimeout
 from tinydb import TinyDB, Query
 from db_crud import chain_monitoring_by_user
+
 # from utils import get_last_proposals, get_last_proposals_range
 from trello_api import get_last_id_trello_by_chain, select_prop_for_publ_trello
 from conf import Conf
@@ -56,7 +58,7 @@ async def monitoring_chains_for_users(period=Conf.monitoring_period):
 
             user_monitoring_list = [
                 chains_table.search(Query().name == i)[0].get("chain")
-             for i in user_monitoring_list
+                for i in user_monitoring_list
             ]
         except IndexError:
             lg.warning("problem with get index in chain_monitoring_list")
@@ -67,8 +69,9 @@ async def monitoring_chains_for_users(period=Conf.monitoring_period):
                 prop, chain_name = get_props_chain(chain_pref)
                 chain_prop_data = prop
                 # print(await get_last_id_trello_by_chain(chain_name))
-                await select_prop_for_publ_trello(prop['proposals'], chain_name, chain_pref)
-
+                await select_prop_for_publ_trello(
+                    prop["proposals"], chain_name, chain_pref
+                )
 
             except BaseException:
                 continue
